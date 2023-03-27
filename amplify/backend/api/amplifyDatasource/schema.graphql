@@ -1,0 +1,81 @@
+type Product @model {
+  id: ID!
+  name: String!
+  price: Float!
+  count: Int
+  about: String
+  images: [String!]!
+  rating: Float
+  colors: [String!]
+  categoryID: ID! @index(name: "byCategory")
+  category: Category @belongsTo(fields: ["categoryID"])
+  brandID: ID @index(name: "byBrand")
+  brand: Brand @belongsTo(fields: ["brandID"])
+}
+
+type Category @model {
+  id: ID!
+  name: String!
+  image: String
+  products: [Product] @hasMany(indexName: "byCategory", fields: ["id"])
+}
+
+type Brand @model {
+  id: iD!
+  name: String!
+  logo: String
+  products: [Product] @hasMany(indexName: "byBrand", fields: ["id"])
+}
+
+type CartProduct @model {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  user: User! @belongsTo(fields: ["userID"])
+  quantity: Int!
+  option: String
+  productID: ID! @index(name: "byProduct")
+  product: Product @hasOne(fields: ["productID"])
+}
+
+type OrderProduct @model {
+  id: ID!
+  quantity: Int!
+  option: String
+  productID: ID! @index
+  product: Product @hasOne(fields: ["productID"])
+  orderID: ID! @index(name: "byOrder")
+  order: Order @belongsTo(fields: ["orderID"])
+}
+
+type Order @model {
+  id: ID!
+  userID: ID! @index(name: "byUser", sortKeyFields: [""])
+  user: User @belongsTo(fields: ["userID"])
+  orderProducts: [OrderProduct] @hasMany(indexName: "byOrder", fields: ["id"])
+  address: Address @hasOne
+}
+
+type User @model {
+  id: ID!
+  carts: [CartProduct] @hasMany(indexName: "byUser", fields: ["id"])
+  orders: [Order] @hasMany(indexName: "byUser", fields: ["id"])
+  addresses: [Address] @hasMany(indexName: "byUser", fields: ["id"])
+  sub: string
+}
+
+type Address @model {
+  id: ID!
+  address: String!
+  subaddress: String
+  city: String!
+  country: Country!
+  fullAddress: String!
+  lat: Float
+  lng: Float
+  location: String
+  postcode: String
+  state: String
+  user: User @belongsTo(fields: ["userID"])
+  userID: ID @index(name: "byUser")
+  isSelected: Boolean
+}
