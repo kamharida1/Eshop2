@@ -8,7 +8,7 @@ export default function Page() {
         <Text style={styles.title}>Hello World</Text>
         <Text style={styles.subtitle}>This is the first page of your app.</Text>
         <LinkButton
-          link="/product/home"
+          link="product/home"
           style={{ marginTop: 16}}
         >
           Products

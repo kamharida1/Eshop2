@@ -1,5 +1,5 @@
 import { Text, View } from "@bacons/react-views";
-import { LinkButton } from "../../etc/link_button";
+import { LinkButton } from "../../../etc/link_button";
 
 export default function Home() {
   return (
