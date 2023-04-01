@@ -1,5 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
+import "@azure/core-asynciterator-polyfill";
 import { LinkButton } from "../etc/link_button";
+import { DataStore } from "aws-amplify";
+import { ExpoSQLiteAdapter } from '@aws-amplify/datastore-storage-adapter/ExpoSQLiteAdapter';
+
+DataStore.configure({
+  storageAdapter: ExpoSQLiteAdapter
+});
 
 export default function Page() {
   return (
@@ -8,10 +15,10 @@ export default function Page() {
         <Text style={styles.title}>Hello World</Text>
         <Text style={styles.subtitle}>This is the first page of your app.</Text>
         <LinkButton
-          link="product/home"
+          link="(app)/(category)/category_list"
           style={{ marginTop: 16}}
         >
-          Products
+          Categories
         </LinkButton>
       </View>
     </View>

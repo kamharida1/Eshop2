@@ -17,11 +17,12 @@ type Category @model {
   id: ID!
   name: String!
   image: String
+  description: String
   products: [Product] @hasMany(indexName: "byCategory", fields: ["id"])
 }
 
 type Brand @model {
-  id: iD!
+  id: ID!
   name: String!
   logo: String
   products: [Product] @hasMany(indexName: "byBrand", fields: ["id"])
@@ -49,7 +50,7 @@ type OrderProduct @model {
 
 type Order @model {
   id: ID!
-  userID: ID! @index(name: "byUser", sortKeyFields: [""])
+  userID: ID! @index(name: "byUser")
   user: User @belongsTo(fields: ["userID"])
   orderProducts: [OrderProduct] @hasMany(indexName: "byOrder", fields: ["id"])
   address: Address @hasOne
@@ -60,7 +61,7 @@ type User @model {
   carts: [CartProduct] @hasMany(indexName: "byUser", fields: ["id"])
   orders: [Order] @hasMany(indexName: "byUser", fields: ["id"])
   addresses: [Address] @hasMany(indexName: "byUser", fields: ["id"])
-  sub: string
+  sub: String
 }
 
 type Address @model {
@@ -68,7 +69,7 @@ type Address @model {
   address: String!
   subaddress: String
   city: String!
-  country: Country!
+  country: String!
   fullAddress: String!
   lat: Float
   lng: Float
