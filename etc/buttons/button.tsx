@@ -8,13 +8,13 @@ interface ButtonT {
   textStyle?: any;
 }
 
-export function Button({
+export const Button =({
   children,
   onPress,
   style,
   buttonStyle,
   textStyle
- }: ButtonT) {
+ }: ButtonT) => {
   return (
     <Pressable onPress={onPress} style={style}>
       {({ pressed, hovered }) => (

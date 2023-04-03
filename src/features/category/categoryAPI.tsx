@@ -82,6 +82,7 @@ const CategoryAPI = () => {
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
       scrollEventThrottle={16}
+      contentContainerStyle={{flex: 1}}
     >
       <View>
         <Text>Catx</Text>

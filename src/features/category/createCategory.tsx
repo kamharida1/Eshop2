@@ -4,7 +4,7 @@ import {
   TextInput,
   Button as NativeButton
 } from "react-native";
-import { Button } from "../../../etc/button";
+import { Button } from "../../../etc/buttons/button";
 import * as ImagePicker from "expo-image-picker";
 
 interface CreateCategoryProps {

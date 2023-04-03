@@ -10,14 +10,14 @@ interface LinkButtonT {
   link: string;
 }
 
-export function LinkButton({
+export const LinkButton =({
   children,
   onPress,
   style,
   buttonStyle,
   textStyle,
   link
-}: LinkButtonT) {
+}: LinkButtonT) => {
   return (
     <Link style={style}  href={link} asChild>
       <Pressable onPress={onPress}>
