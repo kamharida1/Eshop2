@@ -40,7 +40,7 @@ const Screen: React.FC<Props> = ({ loading, scroll, style, children }) => {
       style={[
         {
           flex: 1,
-          paddingTop: 200,
+          paddingTop: insets.top,
           paddingBottom: insets.bottom,
           paddingLeft: insets.left,
           paddingRight: insets.right,

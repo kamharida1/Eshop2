@@ -18,15 +18,15 @@ export default function Page() {
             This is the first page of your app.
           </Text>
           <LinkButton
-            link="(category)/categories"
+            link="category/categories"
             style={{ marginTop: 16 }}
           >
             Categories
           </LinkButton>
-          <LinkButton link="(product)/products" style={{ marginTop: 16 }}>
+          <LinkButton link="product/products" style={{ marginTop: 16 }}>
             Products
           </LinkButton>
-          <LinkButton link="(brand)/brands" style={{ marginTop: 16 }}>
+          <LinkButton link="brand/brands" style={{ marginTop: 16 }}>
             Brands
           </LinkButton>
         </View>

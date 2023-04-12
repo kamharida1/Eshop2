@@ -19,7 +19,7 @@ type EagerProduct = {
   readonly images: string[];
   readonly rating?: number | null;
   readonly colors?: string[] | null;
-  readonly categoryID: string;
+  readonly categoryID?: string | null;
   readonly category?: Category | null;
   readonly brandID?: string | null;
   readonly brand?: Brand | null;
@@ -40,7 +40,7 @@ type LazyProduct = {
   readonly images: string[];
   readonly rating?: number | null;
   readonly colors?: string[] | null;
-  readonly categoryID: string;
+  readonly categoryID?: string | null;
   readonly category: AsyncItem<Category | undefined>;
   readonly brandID?: string | null;
   readonly brand: AsyncItem<Brand | undefined>;

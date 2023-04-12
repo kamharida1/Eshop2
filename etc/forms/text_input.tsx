@@ -9,7 +9,7 @@ import { RoundIcon } from "../icons/round_icon";
 import { Feather as Icon } from "@expo/vector-icons";
 
 interface TextInputProps extends RNTextInputProps {
-  icon: string;
+  icon?: string;
   error?: string;
   touched?: boolean;
   isPassword?: boolean;
@@ -79,4 +79,3 @@ const TextInput = forwardRef<RNTextInput, TextInputProps>(
 
 export default TextInput;
 
-const styles = StyleSheet.create({});

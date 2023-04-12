@@ -39,7 +39,7 @@ export default function ProductLayout() {
           }}
         />
         <Stack.Screen
-          name="detail"
+          name="[id]"
           options={{
             title: "Product Detail",
             headerLargeTitle: true,

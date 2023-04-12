@@ -65,7 +65,7 @@ export const schema = {
                     "name": "categoryID",
                     "isArray": false,
                     "type": "ID",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "category": {
@@ -864,5 +864,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.3.6",
-    "version": "a8d81035ef829e648e76f3d2b320293b"
+    "version": "386deaece0258f9eb788567309dc222a"
 };

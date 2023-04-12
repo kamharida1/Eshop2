@@ -53,7 +53,7 @@ function AddCategoryButton() {
         alignItems: "center",
         paddingRight: 8,
       }}
-      onPress={() => router.push("/add_category")}
+      onPress={() => router.push("/category/add_category")}
     >
       <Text style={{ fontSize: 14}}> Add Category </Text>
       <FontAwesome name="sign-out" size={24} color="black" />

@@ -63,7 +63,7 @@ export const theme = createTheme({
         tablet: "m",
       },
       margin: {
-        phone: "l",
+        phone: "s",
         tablet: "m",
       },
       borderWidth: 0.2,
@@ -104,13 +104,13 @@ export const theme = createTheme({
     },
     body: {
       //fontFamily: "ShopifySans",
-      fontSize: 20,
+      fontSize: 16,
       lineHeight: 24,
       color: "body",
     },
     subBody: {
       //fontFamily: "ShopifySans",
-      fontSize: 14,
+      fontSize: 15,
       lineHeight: 24,
       color: "subBody",
     },

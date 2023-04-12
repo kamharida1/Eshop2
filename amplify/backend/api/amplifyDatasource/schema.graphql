@@ -7,7 +7,7 @@ type Product @model {
   images: [String!]!
   rating: Float
   colors: [String!]
-  categoryID: ID! @index(name: "byCategory")
+  categoryID: ID @index(name: "byCategory")
   category: Category @belongsTo(fields: ["categoryID"])
   brandID: ID @index(name: "byBrand")
   brand: Brand @belongsTo(fields: ["brandID"])
